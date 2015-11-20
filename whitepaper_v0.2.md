@@ -1,4 +1,4 @@
-
+TODO: transcribe formatting from   https://docs.google.com/document/d/1UPMEd407jT6zyvxZRH3N6ay_rjlO4SVKPiaxCgVUIbc/edit
 
 
 
