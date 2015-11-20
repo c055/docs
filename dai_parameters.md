@@ -13,13 +13,6 @@
 | **Dai Ideal Price** | Variable defining the zero-point in the Collateral Redemption Curve. Acts as the market signal for the target price below which monetary policy tools are deployed to defend the market price. Set to trail the market price by a delay that depends on the long term volatility of the Dai, with the goal of a steady, permanent increase. Setting delay to 1 year might have some marketing advantages, overall depends on what kind of long term volatility is observed. |
 | **Insurance Drain** | Determines the rate of buy&burn in daily blind auctions, targeting a policy determined half life.
 
-*Unclear what these are*
-
-*(DAI supply/demand)*
-
-*(MKR supply/demand)*
-
-
 | **Endogenous variables:** |  |
 | --- | --- | 
 | **Dai Market price** | Current Dai trading price. Impacted by everything but most interestingly by insurance rate (positive impact) and price floor (positive impact). |
