@@ -115,6 +115,8 @@ The result is that if a major drop in the price of Dai occurs, a large amount of
 
 The below figure explains the collateral redemption curve for a standard CDP (which starts at 150% collateralization and gets margin cutoff at 125%). A more thorough explanation of what happens in the red **margin call zone** and the black **dead zone** below the margin cutoff is given in the next section.
 
+<a href='https://ipfs.pics/Qmb98McWQbmK7m6EMKLb4poB2tuJtPQdt3vRUqLCcRnJ4C'><img src='https://ipfs.pics/ipfs/Qmb98McWQbmK7m6EMKLb4poB2tuJtPQdt3vRUqLCcRnJ4C'/></a>
+
 ###Undercollateralization 
 
 The biggest risk to the stable value of the Dai, is the risk of undercollateralization.
