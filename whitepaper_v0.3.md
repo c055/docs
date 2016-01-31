@@ -41,15 +41,18 @@
 
 **MKR owners gain value from the Dai** because MKR represents the ownership of Makers insurance service. Dai issuers an insurance fee on the Dai, and Maker steadily funnels this income to MKR owners by buying and permanently destroying MKR supply, thus, decreasing the supply and increasing market price. In return Maker is forced to bail out bad debt in the event of a sudden collateral crash (a so-called a black swan event). If Maker does not have enough assets on hand to immediately cover all bad debt, the MKR supply is automatically inflated and sold off to raise funds in order to cover all the bad debt over time. As a result Makercoin owners are exposed to both the profits and the risk of Makers insurance service.
 
+##Note on oracles, governance and roadmap
+
+This document describes only the economic mechanisms of the fully implemented Dai Credit System. The Maker Prospectus contains information about crucial supporting features such as the price feed oracles that deliver data to the blockchain, the governance scheme of the Maker DAO, as well as the current planned long term design roadmap for Maker from deployment to widespread adoption.
 
 ##How it works
 ###Issuance and supply
 
-The Dai is a token on the Ethereum blockchain. Any Ethereum account can hold Dai, and can transfer it freely to other Ethereum accounts.
+The Dai is a cryptocurrency on the Ethereum blockchain. Any Ethereum account can hold Dai, and can transfer it freely to other Ethereum accounts.
 
-When the Dai Credit System is initially deployed in early 2016, the value of the Dai will be pegged to a **target price** of 0.73 Special Drawing Rights (SDR). The SDR is an international currency basket maintained by the International Monetary Fund (IMF). Over time this target price will increase, resulting in long term deflation.
+When the Dai Credit System is initially deployed in early 2016, the value of the Dai will be pegged to a **target price** of 0.73 Special Drawing Rights (SDR). The SDR is an international currency basket maintained by the International Monetary Fund (IMF). Over time the target price will increase, resulting in long term deflation.
 
-The supply of Dai tokens is controlled through a decentralized issuance scheme that allows anyone to issue new Dai, while ensuring the Dai price remains stable around the target price. Issuing new Dai can be done by anyone by locking collateral in a **collateralized debt position** (CDP) smart contract. A CDP holds **issuance collateral** as well as **issuance debt**. At the time when new Dai is issued, the issuance debt is set equal to the amount of newly issued Dai, but increases over time as the CDP accrues an **insurance fee**. The collateral can be retrieved by the issuer paying down (“covering”) the issuance debt, plus the additional insurance fee, which is paid to the Maker Vault. Paying down the issuance debt and insurance fee returns the collateral to the issuer and deletes the CDP. 
+The supply of Dai tokens is controlled through a decentralized issuance scheme that allows anyone to issue new Dai, while ensuring the Dai price remains stable around the target price. Issuing new Dai is done by locking collateral in a **collateralized debt position** (CDP) smart contract. A CDP holds **issuance collateral** as well as **issuance debt**. At the time when new Dai is issued, the issuance debt is set equal to the amount of newly issued Dai, but increases over time as the CDP accrues an **insurance fee**. The collateral can be retrieved by the issuer paying down (“covering”) the issuance debt, plus the additional insurance fee, which is paid to the Maker Vault. Paying down the issuance debt and insurance fee returns the collateral to the issuer and deletes the CDP.
 
 >*__Example 1__: An issuer wishes to issue 100 Dai, and locks Bitcoin with a market value of significantly more than 100 Dai (“excess collateral”) into a CDP. The insurance rate is 2% over the following year. When the issuer wants to retrieve his Bitcoin, 102 Dai are required to cover the CDP.*
 
@@ -66,15 +69,15 @@ The ownership of a CDP is transferable, but CDPs are not fungible with each othe
 >*__Example 4__: An issuer uses an Over The Counter (OTC) Ethereum contract to issue a 100 SDR worth of Dai together with a counterparty that wishes to become a Dai holder. The issuer contributes 50 SDR worth of BTC while the holder contributes 100 SDR worth of BTC. The OTC contract creates a CDP and issues 100 SDR worth of Dai, and then gives the holder this newly issued Dai. The holder effectively bought 100 SDR worth Dai for 100 SDR worth of BTC. The OTC contract gives the issuer ownership of the CDP, including its 100 SDR worth of issuance debt as well as its 150 SDR worth of BTC collateral. Since he started with only 50 SDR worth of BTC he is now 3x leveraged.*
 ###Price stability
 
-The stability of the Dai around the target price is maintained using **deflation rate adjustment** to continuously match demand between holders and issuers, while **force cover** is the mechanism that enforces the target price with tangible backing by collateral from the CDPs, as well as ensuring short term liquidity and price support in the face of demand shocks for the Dai.
+The stability of the Dai around the target price is maintained using **deflation rate adjustment** to continuously match demand between holders and issuers, while **forced cover** is the mechanism that enforces the target price with the collateral from the CDPs, as well as ensuring short term liquidity and price support in the face of demand shocks for the Dai.
 
 ####Long term price stability
 
 Deflation rate adjustments ensure that the Dai market price remains stabilized around the target price.
 
-When the market price is below the target price, the deflation rate increases. This causes issuance to be more expensive, decreasing demand for issuance, and thus reducing Dai supply. At the same time the capital gains from holding Dai go up as the deflation rate increases, and this increases Dai demand. The decreased supply and increased demand will cause the market price to increase, pushing it up towards the target price.
+When the market price is below the target price, the deflation rate increases. This causes issuance to be more expensive, decreasing demand for issuance, and thus reducing Dai supply. At the same time the capital gains from holding Dai go up as the deflation rate increases, and this increases Dai holding demand. The decreased supply and increased demand will cause the market price to increase, pushing it up towards the target price.
 
-The same mechanism works in reverse if the market price is higher than the target price. The deflation rate decreases, increasing demand for issuance and thus increasing Dai supply, while decreasing Dai demand (less capital gains from deflation), causing the Dai price to decrease, pushing it towards the target price.
+The same mechanism works in reverse if the market price is higher than the target price. The deflation rate decreases, increasing demand for issuance and thus increasing Dai supply, while decreasing demand for holding Dai (less capital gains from deflation), causing the Dai price to decrease, pushing it down towards the target price.
 
 This mechanism can be considered a negative feedback loop. Any deviation from the target price by the market price will trigger a mechanism that pushes the market price back towards the target price. The magnitude of the deflation rate adjustments depend on how strongly the market price deviates from the target price; very strong deviations result in bigger adjustments whereas small deviations result in very small adjustments. 
 
@@ -124,13 +127,11 @@ Should many CDPs become simultaneously undercollateralized to the point where th
 
 ###Collateral requirements and debt ceilings
 
-There are two primary factors that determine the risk of a given collateral type: Market depth and volatility. While these two factors are related - more market depth means less volatility - they still contribute separately to the overall risk and are thus each managed with a separate mechanism.
+There are two primary factors that determine the risk of a given collateral type: Market depth and volatility. While these two factors are related - more market depth means less volatility - they still contribute separately to the overall risk and are thus each managed with a separate mechanisms.
 
 ####Market depth risk
 
 The impact of market depth on the risk of a collateral type is managed through the **debt ceiling**. In short, the debt ceiling is the maximum amount of issuance debt that can be held in CDPs that use the same type of collateral. Once the debt ceiling for a collateral type has been reached, no more Dai can be issued using the asset as collateral, until existing CDPs using the asset are covered. New Dai can still be issued using a different asset as collateral.
-
-The debt ceiling is set by MKR holders through voting, by analysing the market depth of an asset and setting the debt ceiling accordingly, subject to continuous, rigorous review.
 
 ####Volatility risk
 
