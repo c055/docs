@@ -21,7 +21,7 @@
 
 
 ##Glossary of terms
-
+| | |
 | --- | --- |
 | **Dai** | An Ethereum based cryptocurrency with short term price stability and long term price deflation |
 | **Dai collateral** | Assets that can be locked cryptographically on the Ethereum blockchain |
