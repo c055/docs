@@ -1,3 +1,5 @@
+To be included in the Maker Prospectus
+
 ###Governance and system security
 
 Due to the complex nature of Maker’s business logic, it is being built using the dappsys framework so that it can be dynamically upgraded in a modular fashion while still seamlessly and securely operating the Dai Credit System.
