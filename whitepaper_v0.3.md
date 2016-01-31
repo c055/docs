@@ -1,7 +1,7 @@
 #The Dai Credit System
 ##Decentralized, autonomous and insured by Maker
 
-#####Version 0.3 RC – 2016-01-31
+#####Version 0.3 – 2016-01-31
 
 
 
