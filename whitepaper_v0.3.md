@@ -43,7 +43,7 @@
 
 ##Note on oracles, governance and roadmap
 
-This document describes only the economic mechanisms of the fully implemented Dai Credit System. The Maker Prospectus contains information about crucial supporting features such as the price feed oracles that deliver data to the blockchain, the governance scheme of the Maker DAO, as well as the current planned long term design roadmap for Maker from deployment to widespread adoption.
+This document describes only the economic mechanisms of the fully implemented Dai Credit System. The Maker Prospectus (will be released soon) contains information about crucial supporting features such as the price feed oracles that deliver data to the blockchain, the governance scheme of the Maker DAO, as well as the current planned long term design roadmap for Maker from deployment to widespread adoption.
 
 ##How it works
 ###Issuance and supply
