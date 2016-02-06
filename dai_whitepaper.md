@@ -10,7 +10,7 @@
 
 
 
-*The Dai is a stable, deflationary cryptocurrency that enables borrowers and lenders to transact in a credit system that is permissionless and has low risk. Dai issuers (borrowers) issue Dai by posting ether and other cryptocurrency as collateral on the Ethereum blockchain, and sell these Dai on the market to Dai holders (lenders) for liquid assets. Dai holders use the Dai as a stable cryptocurrency for trade, and to earn capital gains from its deflation. Maker is the Ethereum powered Decentralized Autonomous Organization that operates the infrastructure of the Dai Credit System, and provides default insurance to its users in exchange for an insurance fee.* 
+*The Dai is a stable, deflationary cryptocurrency that enables borrowers and lenders to transact in a credit system that is permissionless and has low risk. Dai issuers (borrowers) issue Dai by posting Bitcoin, Ether and other cryptocurrency as collateral on the Ethereum blockchain, and sell these Dai on the market to Dai holders (lenders) for liquid assets. Dai holders use the Dai as a stable cryptocurrency for trade, and to earn capital gains from its deflation. Maker is the Ethereum powered Decentralized Autonomous Organization that operates the infrastructure of the Dai Credit System, and provides default insurance to its users in exchange for an insurance fee.* 
 
 
 
@@ -30,6 +30,7 @@
 | **Maker** | Decentralized Autonomous Organization (DAO) operating the Dai Credit System infrastructure on the Ethereum blockchain |
 | **MKR** | A cryptocurrency that insures the collateralization of the Dai |
 | **SDR** | Special Drawing Right, a currency basket maintained by the International Monetary Fund |
+| **BTC** | Bitcoin, the first cryptocurrency
 
 
 
@@ -39,7 +40,7 @@
 
 **Dai holders use the Dai** as a stable cryptocurrency on the Ethereum blockchain, and as a low risk investment asset that is free from volatility risk and is long term deflationary. The Dai has low risk relative to most blockchain assets because every Dai is provably backed by a diversified pool of collateral on the Ethereum blockchain, as well as by Makers insurance.
 
-**MKR owners gain value from the Dai** because MKR represents the ownership of Makers insurance service. Dai issuers an insurance fee on the Dai, and Maker steadily funnels this income to MKR owners by buying and permanently destroying MKR supply, thus, decreasing the supply and increasing market price. In return Maker is forced to bail out bad debt in the event of a sudden collateral crash (a so-called a black swan event). If Maker does not have enough assets on hand to immediately cover all bad debt, the MKR supply is automatically inflated and sold off to raise funds in order to cover all the bad debt over time. As a result Makercoin owners are exposed to both the profits and the risk of Makers insurance service.
+**MKR owners gain value from the Dai** because MKR represents the ownership of Makers insurance service. Dai issuers pay an insurance fee on the Dai, and Maker steadily funnels this income to MKR owners by buying and permanently destroying MKR supply, thus decreasing the supply and increasing market price. In return Maker is forced to bail out bad debt in the event of a sudden collateral crash (a so-called black swan event). If Maker does not have enough assets on hand to immediately cover all bad debt, the MKR supply is automatically inflated and sold off to raise funds in order to cover all the bad debt over time. As a result MKR owners are exposed to both the profits and the risk of Makers insurance service.
 
 ##Note on oracles, governance and roadmap
 
@@ -56,9 +57,9 @@ The supply of Dai tokens is controlled through a decentralized issuance scheme t
 
 >*__Example 1__: An issuer wishes to issue 100 Dai, and locks Bitcoin with a market value of significantly more than 100 Dai (“excess collateral”) into a CDP. The insurance rate is 2% over the following year. When the issuer wants to retrieve his Bitcoin, 102 Dai are required to cover the CDP.*
 
-The Dai deflation means that the market value of the issuance debt will also have increased over time in terms of SDR, and issuers will need to take the deflation into consideration in addition to the insurance fee as the total effective cost of issuing the Dai. The deflation is a transfer of value from the issuer to the Dai holders (as payment for borrowing capital), and the insurance fee is a transfer of value from the issuer to Maker (as payment for insuring the collateral).
+The Dai deflation means that the market value given in SDR of the issuance debt will also have increased over time, and issuers will need to take the deflation into consideration in addition to the insurance fee as the total effective cost of issuing the Dai. The deflation is a transfer of value from the issuer to the Dai holders (as payment for borrowing capital), and the insurance fee is a transfer of value from the issuer to Maker (as payment for insuring the collateral).
 
->*__Example 2__: An issuer issues 100 SDR worth of Dai (note: this is not 100 Dai) by locking 150 SDR worth of Bitcoin into a CDP. The total effective cost of insurance and deflation over the following year is 5% relative to SDR. When the issuer wants to retrieve his Bitcoin, 105 SDR worth of Dai is required to cover the CDP.*
+>*__Example 2__: An issuer issues 100 SDR worth of Dai (note: not 100 Dai) by locking 150 SDR worth of BTC into a CDP. The total effective cost of insurance and deflation over the following year is 5% relative to SDR. When the issuer wants to retrieve his BTC, 105 SDR worth of Dai is required to cover the CDP.*
 
 Issuing Dai can be considered as borrowing capital from the Dai Credit System. In practice the issuer is either seeking to take a leveraged long position on the asset used as collateral (margin trading), or is seeking liquidity in a hard currency (such as BTC or USD) without selling the asset used as collateral. The last example could be the case of a business collateralizing stock in order to raise short term liquidity for operational expenses. In both cases the way the issuer actually obtains the asset that he wants is by first creating the CDP with their collateral and issuing Dai, then selling the newly issued Dai on the market in exchange for their desired asset or currency. Dai holders that pay assets and currency in exchange for Dai do this in order to earn capital gains from the Dai deflation and/or use it as a stable cryptocurrency on the Ethereum blockchain. 
 
@@ -66,7 +67,7 @@ Issuing Dai can be considered as borrowing capital from the Dai Credit System. I
 
 The ownership of a CDP is transferable, but CDPs are not fungible with each other. This allows them to be used in smart contracts that can perform more complex methods of issuance involving more than one actor.
 
->*__Example 4__: An issuer uses an Over The Counter (OTC) Ethereum contract to issue a 100 SDR worth of Dai together with a counterparty that wishes to become a Dai holder. The issuer contributes 50 SDR worth of BTC while the holder contributes 100 SDR worth of BTC. The OTC contract creates a CDP and issues 100 SDR worth of Dai, and then gives the holder this newly issued Dai. The holder effectively bought 100 SDR worth Dai for 100 SDR worth of BTC. The OTC contract gives the issuer ownership of the CDP, including its 100 SDR worth of issuance debt as well as its 150 SDR worth of BTC collateral. Since he started with only 50 SDR worth of BTC he is now 3x leveraged.*
+>*__Example 4__: An issuer uses an Ethereum contract to issue 100 SDR worth of Dai in collaboration with a counterparty that wishes to become a Dai holder. The issuer contributes 50 SDR worth of BTC while the holder contributes 100 SDR worth of BTC. The OTC contract creates a CDP and issues 100 SDR worth of Dai, and then gives the holder this newly issued Dai. The holder effectively bought 100 SDR worth Dai for 100 SDR worth of BTC. The OTC contract gives the issuer ownership of the CDP, including its 100 SDR worth of issuance debt as well as its 150 SDR worth of BTC collateral. Since he started with only 50 SDR worth of BTC he is now 3x leveraged.*
 ###Price stability
 
 The stability of the Dai around the target price is maintained using **deflation rate adjustment** to continuously match demand between holders and issuers, while **forced cover** is the mechanism that enforces the target price with the collateral from the CDPs, as well as ensuring short term liquidity and price support in the face of demand shocks for the Dai.
@@ -95,11 +96,11 @@ The bounty varies based on the collateralization of the CDP subject to the force
 
 The slope of the collateral curve is initially simplified to always be approximately 1, so a 1% movement in collateralization in a direction produces a corresponding 1% change in the bounty.
 
->*__Example 5__: Bitcoin has a zero point of 130%. A CDP is created with 135% collateralization. At this level of collateralization, the CDP has a bounty of -5%, and performing a forced cover that costs 100 SDR worth of Dai will only buy 95 SDR worth of Bitcoin, giving a 5% loss (assuming that the market price of Dai is equal to the target price when the forced cover happens).*
+>*__Example 5__: Bitcoin has a zero point of 130%. A CDP is created with 135% collateralization. At this level of collateralization, the CDP has a bounty of -5%, and performing a forced cover that costs 100 SDR worth of Dai will only buy 95 SDR worth of BTC, giving a 5% loss (assuming that the market price of Dai is equal to the target price when the forced cover happens).*
 
 If the collateralization ratio of a CDP goes below the zero point, the bounty for performing a forced cover on the CDP becomes positive. At this point the forced cover is also referred to as a margin call, as it has a similar function of closing out positions that are too risky. The positive bounty will generally cause market forces to instantly margin call the CDP in order to earn the free profit from buying a larger portion of the CDPs collateral at the same price.
 
->*__Example 6__: An issuer creates a CDP with 130 SDR worth of Bitcoin as collateral, and uses it to issue 100 SDR worth of Dai. The price of Bitcoin subsequently falls 10%, leaving the CDP at 117% collateralization. The bounty is now +13%, and a Dai holder quickly margin calls it, paying down the 100 SDR debt, but obtaining 113 SDR worth of Bitcoin, with only 4 SDR worth of Bitcoin remaining for the issuer.*
+>*__Example 6__: An issuer creates a CDP with 130 SDR worth of BTC as collateral, and uses it to issue 100 SDR worth of Dai. The price of BTC subsequently falls 10%, leaving the CDP at 117% collateralization. The bounty is now +13%, and a Dai holder quickly margin calls it, paying down the 100 SDR debt, but obtaining 113 SDR worth of BTC, with only 4 SDR worth of BTC remaining for the issuer.*
  
 The purpose of the forced cover is to provide a buffer of liquid assets from the CDPs in case the price of Dai suddenly drops dramatically due to a shock in demand. This is because a CDPs bounty is determined in terms of the Dai target price, and the **effective bounty** changes in response to the market price, changing with the same magnitude but in the opposite direction of a deviation of the market price from the target price. This creates another negative feedback loop that serves to push the market price towards the target price.
 
